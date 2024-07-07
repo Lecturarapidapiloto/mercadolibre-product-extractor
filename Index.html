@@ -7,18 +7,14 @@
 </head>
 <body>
     <h1>Mercado Libre Scraper</h1>
-    <form id="scrapeForm">
-        <label for="url">URL de Mercado Libre México:</label>
-        <input type="text" id="url" name="url" required>
-        <button type="submit">Obtener Información del Producto</button>
-    </form>
+    <input type="text" id="url" placeholder="Ingresa el enlace del producto">
+    <button onclick="scrapeProduct()">Obtener Información</button>
     <div id="result"></div>
 
     <script>
-        document.getElementById('scrapeForm').addEventListener('submit', async function(event) {
-            event.preventDefault();
+        async function scrapeProduct() {
             const url = document.getElementById('url').value;
-            const response = await fetch('https://your-backend-url.repl.co/scrape', {
+            const response = await fetch('https://f9bf3543-4b12-4ca5-9462-b9339b6e3aa4-00-12oy4n2jarz69.kirk.replit.dev/scrape', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -26,17 +22,17 @@
                 body: JSON.stringify({ url })
             });
             const data = await response.json();
+            const resultDiv = document.getElementById('result');
             if (data.success) {
-                const resultDiv = document.getElementById('result');
                 resultDiv.innerHTML = `
                     <h2>${data.name}</h2>
                     <p>Precio: ${data.price}</p>
-                    <div>${data.images.map(img => `<img src="${img}" alt="Product Image">`).join('')}</div>
+                    <div>${data.images.map(src => `<img src="${src}" width="100">`).join('')}</div>
                 `;
             } else {
-                alert('Error al obtener la información del producto.');
+                resultDiv.textContent = 'No se pudo obtener la información del producto.';
             }
-        });
+        }
     </script>
 </body>
 </html>
