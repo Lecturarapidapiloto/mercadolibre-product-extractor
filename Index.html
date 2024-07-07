@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MercadoLibre Product Extractor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>MercadoLibre Product Extractor</h1>
+        <input type="text" id="productUrl" placeholder="Enter Mercado Libre product URL">
+        <button id="getProductInfo">Get Product Info</button>
+
+        <div id="productInfo" style="display: none;">
+            <h2 id="title"></h2>
+            <img id="photo" alt="Product Photo">
+            <p id="description"></p>
+            <p id="price"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
