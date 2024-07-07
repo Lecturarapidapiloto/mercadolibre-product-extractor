@@ -1,25 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MercadoLibre Product Extractor</title>
+    <title>Extractor de Productos de Mercado Libre</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>MercadoLibre Product Extractor</h1>
-        <input type="text" id="productUrl" placeholder="Enter Mercado Libre product URL">
-        <button id="getProductInfo">Get Product Info</button>
-
-        <div id="productInfo" style="display: none;">
-            <h2 id="title"></h2>
-            <img id="photo" alt="Product Photo">
-            <p id="description"></p>
-            <p id="price"></p>
-        </div>
+    <h1>Extractor de Productos de Mercado Libre</h1>
+    <form id="form">
+        <input type="text" id="url" placeholder="Ingresa la URL del producto de Mercado Libre">
+        <button type="submit">Extraer</button>
+    </form>
+    <div id="result">
+        <h2 id="titulo"></h2>
+        <img id="imagen" alt="Imagen del producto">
+        <p id="descripcion"></p>
+        <p id="precio"></p>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
